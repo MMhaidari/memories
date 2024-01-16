@@ -1,5 +1,5 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query";
-import { METHODS, MEMORIESURLS } from "./constants";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { METHODS, MEMORIESURLS } from "../constants";
 
 export const memoriesApi = createApi({
     reducerPath: 'memoriesApi',
@@ -19,3 +19,5 @@ export const memoriesApi = createApi({
         })
     })
 })
+
+export const { useGetAllMemoriesQuery } = memoriesApi;
