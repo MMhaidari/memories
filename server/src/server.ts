@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
+import router from './routes/memoriesRoutes';
 
 const app = express();
 
@@ -10,5 +11,6 @@ app.use(morgan('dev'))
 app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 
+app.use('/api', router)
 
 export default app;
